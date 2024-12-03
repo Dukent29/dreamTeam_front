@@ -13,7 +13,7 @@
         <!-- Parent Links -->
         <template v-else-if="role === 'parent'">
           <li><NuxtLink to="/parent">Parent Home</NuxtLink></li>
-          <li><NuxtLink to="/parent/child-profile">Child Profiles</NuxtLink></li>
+          <li><NuxtLink to="/parent/child_profile">Child Profiles</NuxtLink></li>
           <li><NuxtLink to="/parent/schedule">Schedules</NuxtLink></li>
         </template>
 
@@ -51,7 +51,7 @@ const { isAuthenticated, role } = useAuth();
   padding: 20px;
   min-height: 100vh;
   text-align: center;
-  border-radius: 20px;
+  border-radius: 10px;
 
 }
 

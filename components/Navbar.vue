@@ -30,12 +30,14 @@ const { isAuthenticated, logout } = useAuth(); // Use global auth state and logo
 
 <style scoped>
 .navbar {
-  background-color: #1abc9c;
+  background-color: #2e2e2e;
   color: white;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 .navbarlinks{
   gap: 1rem;

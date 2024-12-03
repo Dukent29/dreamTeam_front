@@ -29,10 +29,11 @@ import Navbar from '~/components/Navbar.vue'; // Navbar component
 .main-content {
   flex: 1;
   display: flex;
+  gap: .9rem;
 }
 
 .content-area {
-  padding: 20px;
   flex: 1;
+  border-radius: 5px;
 }
 </style>

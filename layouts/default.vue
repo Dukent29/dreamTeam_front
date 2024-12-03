@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import Header from '~/components/Header.vue';  // Import Header correctly here
+import Header from '~/components/header.vue';  // Import Header correctly here
 </script>
 
 <style scoped>
