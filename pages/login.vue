@@ -1,45 +1,36 @@
 <template>
-  <div class="login-container">
-    <div class="form-container">
-      <h1>Welcome Back!</h1>
-      <form @submit.prevent="submitLoginForm">
-        <input
-            type="email"
-            v-model="formData.email"
-            placeholder="Email address"
-            required
-        />
-        <input
-            type="password"
-            v-model="formData.password"
-            placeholder="Password"
-            required
-        />
-        <div class="remember-container">
-          <input type="checkbox" v-model="rememberMe"/>
-          <label for="rememberMe">Remember me</label>
-          <a href="#" class="forgot-password">Forgot password?</a>
+  <section class="auth-shell">
+    <div class="auth-grid">
+      <div class="auth-card glass">
+        <h1>Welcome Back</h1>
+        <form @submit.prevent="submitLoginForm" class="auth-form">
+          <input type="email" v-model="formData.email" placeholder="Email address" required />
+          <input type="password" v-model="formData.password" placeholder="Password" required />
+          <div class="row between">
+            <label class="remember"><input type="checkbox" v-model="rememberMe"/> Remember me</label>
+            <a href="#" class="link">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn btn-primary">Sign In</button>
+        </form>
+
+        <div class="muted center small">
+          Don’t have an account?
+          <NuxtLink to="/register" class="link">Register</NuxtLink>
         </div>
-        <button type="submit" class="button primary-button">Sign In</button>
-      </form>
 
-      <div class="register-link">
-        <p>Don't have an account?
-          <NuxtLink to="/register">Register here</NuxtLink>
-        </p>
+        <div class="social">
+          <div class="divider"><span>OR</span></div>
+          <button class="btn btn-neutral">Continue with Apple</button>
+          <button class="btn btn-neutral">Continue with Google</button>
+        </div>
       </div>
 
-      <div class="social-login">
-        <p>OR</p>
-        <button class="button apple-login">Continue with Apple</button>
-        <button class="button google-login">Continue with Google</button>
-      </div>
+      <aside class="auth-side">
+        <h2>Dream Team</h2>
+        <p>Sign in to manage your children, view schedules, and stay connected with coaches.</p>
+      </aside>
     </div>
-    <div class="text-container">
-      <h1>Welcome to Dream Team</h1>
-      <p>Your journey to connecting with the football association continues. Login to stay in touch with us.</p>
-    </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
@@ -102,6 +93,4 @@ const submitLoginForm = async () => {
 </script>
 
 
-<style scoped>
-/* Add your styling here */
-</style>
+<!-- styles moved to assets/auth.css -->
