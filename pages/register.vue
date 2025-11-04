@@ -1,69 +1,37 @@
 <template>
-  <div class="register-container">
-    <div class="form-container">
-      <h1>Create Your Account</h1>
-      <form @submit.prevent="submitForm">
-        <input
-            type="text"
-            v-model="formData.first_name"
-            placeholder="First Name"
-            required
-        />
-        <input
-            type="text"
-            v-model="formData.last_name"
-            placeholder="Last Name"
-            required
-        />
-        <input
-            type="text"
-            v-model="formData.name"
-            placeholder="Username"
-            required
-        />
-        <input
-            type="email"
-            v-model="formData.email"
-            placeholder="Email"
-            required
-        />
-        <input
-            type="password"
-            v-model="formData.password"
-            placeholder="Password"
-            required
-        />
-        <input
-            type="password"
-            v-model="confirmPassword"
-            placeholder="Confirm Password"
-            required
-        />
-        <div v-if="passwordMismatch" class="error">
-          Passwords do not match.
-        </div>
-        <div class="gdpr-container">
-          <input type="checkbox" v-model="acceptGdpr" required />
-          <label for="acceptGdpr">I accept the RGPD rules</label>
-        </div>
-        <button type="submit" class="button primary-button">Register</button>
-      </form>
+  <section class="auth-shell">
+    <div class="auth-grid">
+      <div class="auth-card glass">
+        <h1>Create Your Account</h1>
+        <form @submit.prevent="submitForm" class="auth-form">
+          <input type="text" v-model="formData.first_name" placeholder="First Name" required />
+          <input type="text" v-model="formData.last_name" placeholder="Last Name" required />
+          <input type="text" v-model="formData.name" placeholder="Username" required />
+          <input type="email" v-model="formData.email" placeholder="Email" required />
+          <input type="password" v-model="formData.password" placeholder="Password" required />
+          <input type="password" v-model="confirmPassword" placeholder="Confirm Password" required />
+          <div v-if="passwordMismatch" class="error-text">Passwords do not match.</div>
+          <label class="remember"><input type="checkbox" v-model="acceptGdpr" required /> I accept the RGPD rules</label>
+          <button type="submit" class="btn btn-primary">Register</button>
+        </form>
 
-      <div class="login-link">
-        <p>Already have an account? <NuxtLink to="/login">Login here</NuxtLink></p>
+        <div class="muted center small">
+          Already have an account? <NuxtLink to="/login" class="link">Login</NuxtLink>
+        </div>
+
+        <div class="social">
+          <div class="divider"><span>OR</span></div>
+          <button class="btn btn-neutral">Continue with Apple</button>
+          <button class="btn btn-neutral">Continue with Google</button>
+        </div>
       </div>
 
-      <div class="social-login">
-        <p>OR</p>
-        <button class="button apple-login">Continue with Apple</button>
-        <button class="button google-login">Continue with Google</button>
-      </div>
+      <aside class="auth-side">
+        <h2>Join Dream Team</h2>
+        <p>Create an account to add children, follow schedules, and collaborate with coaches.</p>
+      </aside>
     </div>
-    <div class="text-container">
-      <h1>Welcome to Dream Team</h1>
-      <p>Your journey to connecting with the football association starts here. Join us and be part of the Dream Team family.</p>
-    </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
@@ -120,4 +88,4 @@ const submitForm = async () => {
   }
 };
 </script>
-
+<!-- styles moved to assets/auth.css -->

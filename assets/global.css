@@ -346,3 +346,14 @@ nav ul {
 .dashboard p{
   justify-content: center;
 }
+.action-buttons{
+  display: flex;
+  gap: 25px;
+}
+.child-card{
+  background-color: #0d0d0d66;
+  border: 1px solid #fff;
+  padding: 2rem;
+  border-radius: 5px;
+  width: 28%;
+}
